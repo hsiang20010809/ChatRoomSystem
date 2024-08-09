@@ -1,0 +1,57 @@
+﻿<Window x:Class="ChatRoomSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Chat Room System" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Server -->
+        <GroupBox Header="Server" Grid.Column="0">
+            <StackPanel>
+                <TextBlock Text="Port:"/>
+                <TextBox x:Name="ServerPortTextBox" Text="8888"/>
+                <Button x:Name="StartServerButton" Content="Start Server" Click="StartServerButton_Click"/>
+                <Button x:Name="StopServerButton" Content="Stop Server" Click="StopServerButton_Click"/>
+                <TextBox x:Name="ServerLogTextBox" IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Height="300"/>
+            </StackPanel>
+        </GroupBox>
+
+        <!-- Client 1 -->
+        <GroupBox Header="Client 1" Grid.Column="1">
+            <StackPanel>
+                <TextBlock Text="IP:"/>
+                <TextBox x:Name="Client1IpTextBox" Text="127.0.0.1"/>
+                <TextBlock Text="Port:"/>
+                <TextBox x:Name="Client1PortTextBox" Text="8888"/>
+                <TextBlock Text="Username:"/>
+                <TextBox x:Name="Client1UsernameTextBox" Text="User1"/>
+                <Button x:Name="ConnectClient1Button" Content="Connect" Click="ConnectClient1Button_Click"/>
+                <Button x:Name="DisconnectClient1Button" Content="Disconnect" Click="DisconnectClient1Button_Click"/>
+                <TextBox x:Name="Client1ChatTextBox" IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Height="200"/>
+                <TextBox x:Name="Client1MessageTextBox"/>
+                <Button x:Name="SendClient1Button" Content="Send" Click="SendClient1Button_Click"/>
+            </StackPanel>
+        </GroupBox>
+
+        <!-- Client 2 -->
+        <GroupBox Header="Client 2" Grid.Column="2">
+            <StackPanel>
+                <TextBlock Text="IP:"/>
+                <TextBox x:Name="Client2IpTextBox" Text="127.0.0.1"/>
+                <TextBlock Text="Port:"/>
+                <TextBox x:Name="Client2PortTextBox" Text="8888"/>
+                <TextBlock Text="Username:"/>
+                <TextBox x:Name="Client2UsernameTextBox" Text="User2"/>
+                <Button x:Name="ConnectClient2Button" Content="Connect" Click="ConnectClient2Button_Click"/>
+                <Button x:Name="DisconnectClient2Button" Content="Disconnect" Click="DisconnectClient2Button_Click"/>
+                <TextBox x:Name="Client2ChatTextBox" IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Height="200"/>
+                <TextBox x:Name="Client2MessageTextBox"/>
+                <Button x:Name="SendClient2Button" Content="Send" Click="SendClient2Button_Click"/>
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Window>
